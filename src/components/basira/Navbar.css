@@ -1,0 +1,20 @@
+.navbar {
+  direction: rtl;
+  z-index: 50;
+}
+
+.navbar .nav-link {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding-inline: 1rem;
+  }
+}
