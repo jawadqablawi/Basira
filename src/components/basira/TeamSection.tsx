@@ -1,42 +1,37 @@
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 const teamMembers = [
-  {
+     {
+    name: "Halla  shumali",
+    role: "Bachelor of English Language",
+    image: "/team/halla.jpeg",
+   bio: "تساهم في تطوير المحتوى باللغة الإنجليزية وصياغته بأسلوب احترافي، بما يعزز حضور المبادرة ويضمن وصول رسالتها إلى نطاق أوسع محليًا ودوليًا.",
+    socials: {
+      instagram: "https://www.instagram.com/halla.s.s?igsh=MTBwaTkyb3c4aWUxaw==",
+   
+    },
+  },
+   {
     name: "Jawad Qablawi",
-    role: "Team Leader",
+    role: "Computer Engineering Student",
     image: "/team/jawad.jpg",
     bio: "يساهم في تنظيم أعمال المبادرة ومتابعة الأنشطة والتنسيق بين أعضاء الفريق.",
     socials: {
-      instagram: "#",
-      facebook: "#",
-      email: "mailto:example@gmail.com",
-      phone: "tel:+970599999999",
+      instagram: "https://www.instagram.com/jawad.qablawi?igsh=MXhldGZtaWx1cXo5aA==",
     },
   },
-  {
-    name: "مريم خالد",
-    role: "مسؤولة الدعم النفسي",
-    image: "/team/mariam.jpg",
-    bio: "تعمل على تصميم الأنشطة الداعمة للأطفال والمساهمة في بناء بيئة آمنة وملهمة.",
+   {
+    name: "Areen Hamdan",
+    role: "Media Technology Student",
+    image: "/team/areen.jpeg",
+   bio: "تعمل على توثيق أنشطة المبادرة وإدارة المحتوى الإعلامي، من خلال التصوير والتصميم وصناعة محتوى هادف يعكس رسالة المبادرة ويصل إلى المجتمع بشكل مؤثر.",
     socials: {
-      instagram: "#",
-      facebook: "#",
-      email: "mailto:example@gmail.com",
-      phone: "tel:+970599999999",
+      instagram: "https://www.instagram.com/areen__48?igsh=MWZ1cWNkYmhtdGhzOQ==",
     },
   },
-  {
-    name: "لينا يوسف",
-    role: "مسؤولة المحتوى والإعلام",
-    image: "/team/lina.jpg",
-    bio: "تتابع المحتوى الإعلامي للمبادرة وتوثيق الأنشطة وإبراز أثر الفريق.",
-    socials: {
-      instagram: "#",
-      facebook: "#",
-      email: "mailto:example@gmail.com",
-      phone: "tel:+970599999999",
-    },
-  },
+ 
+
+
 ];
 
 export default function TeamSection() {
@@ -83,37 +78,16 @@ export default function TeamSection() {
               </p>
 
               {/* السوشيال */}
-              <div className="flex justify-center gap-3">
-                
-                <a
-                  href={member.socials.phone}
-                  className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-green-500/70 transition"
-                >
-                  <Phone size={16} />
-                </a>
-
-                <a
-                  href={member.socials.email}
-                  className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-orange-500/70 transition"
-                >
-                  <Mail size={16} />
-                </a>
-
-                <a
-                  href={member.socials.facebook}
-                  className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-blue-500/70 transition"
-                >
-                  <Facebook size={16} />
-                </a>
-
-                <a
-                  href={member.socials.instagram}
-                  className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-pink-500/70 transition"
-                >
-                  <Instagram size={16} />
-                </a>
-
-              </div>
+           <div className="flex justify-center space-x-3">
+  <a
+    href={member.socials.instagram}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-pink-500/70 transition"
+  >
+    <Instagram size={16} />
+  </a>
+</div>
             </div>
           ))}
         </div>

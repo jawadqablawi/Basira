@@ -78,22 +78,34 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <Button
-              variant="hero"
-              size="lg"
-              className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
-            >
-              <Heart className="h-5 w-5" />
-              انضم إلينا
-            </Button>
+  variant="hero"
+  size="lg"
+  className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
+  onClick={() =>
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSeKIoBvhLFCMO7Kr4bDpx-jWTOinkogAcII9izUTwQ6whQFVQ/viewform?usp=dialog",
+      "_blank"
+    )
+  }
+>
+  <Heart className="h-5 w-5" />
+  انضم إلينا
+</Button>
 
-            <Button
-              variant="hero-outline"
-              size="lg"
-              className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
-            >
-              <Users className="h-5 w-5" />
-              تطوّع معنا
-            </Button>
+<Button
+  variant="hero-outline"
+  size="lg"
+  className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
+  onClick={() =>
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScV-PSwmKQrw2di1KtBFLjHXewJz7aF5WPX4nOQiXjFFU0m7w/viewform?usp=sharing&ouid=108016718349544175707",
+      "_blank"
+    )
+  }
+>
+  <Users className="h-5 w-5" />
+  تطوّع معنا
+</Button>
           </motion.div>
         </div>
       </div>

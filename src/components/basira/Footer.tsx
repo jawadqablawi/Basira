@@ -50,12 +50,32 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="xl:col-span-1 flex flex-col text-right">
-            <img
-              src="/logo.svg"
-              alt="Basira Logo"
-              className="block w-48 h-auto ml-auto mb-6 drop-shadow-[0_8px_22px_rgba(0,0,0,0.35)] hover:scale-[1.03] transition duration-300"
-            />
+         <div className="flex items-center gap-4">
+  {/* شعار بصيرة */}
+  <img
+    src="/logo.svg"
+    alt="Basira"
+    className="h-12 md:h-14 w-auto object-contain"
+  />
 
+  {/* خط فاصل */}
+  <div className="h-10 w-px bg-white/20" />
+
+  {/* شعارات الشركاء */}
+  <div className="flex items-center gap-3">
+    <img
+      src="/partners/ptuk.png"
+      alt="PTUK"
+      className="h-8 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition"
+    />
+
+    <img
+      src="/partners/pssf.png"
+      alt="PSSF"
+      className="h-8 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition"
+    />
+  </div>
+</div>
             <p className="text-white/80 leading-9 text-base max-w-[360px] ml-auto">
               مبادرة شبابية تهدف إلى تقديم الدعم النفسي والتعليمي وتمكين الأطفال
               من خلال أنشطة مؤثرة ومستدامة، ضمن بيئة آمنة وملهمة تصنع أثرًا حقيقيًا.
@@ -110,18 +130,21 @@ export default function Footer() {
 
             <div className="flex justify-end gap-3 mt-8">
               <a
-                href="#"
-                className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-blue-500 hover:scale-110 transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-
-              <a
-                href="#"
-                className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-blue-500 hover:scale-110 transition-all duration-300"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
+  href="https://instagram.com/basira.ptuk"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-blue-500 hover:scale-110 transition-all duration-300"
+>
+  <Instagram className="w-5 h-5" />
+</a>
+<a
+  href="https://www.facebook.com/profile.php?id=61577499724517"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-blue-500 hover:scale-110 transition-all duration-300"
+>
+  <Facebook className="w-5 h-5" />
+</a>
             </div>
           </div>
 
