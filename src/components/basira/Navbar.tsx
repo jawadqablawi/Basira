@@ -10,6 +10,12 @@ const navLinks = [
   { label: "المقالات", href: "/articles" },
   { label: "الفريق", href: "/team" },
   { label: "تواصل معنا", href: "/contact" },
+  {
+    label: "صوّت لنا",
+    href: "https://www.thepssf.com/pifteam-basira-initiative",
+    external: true,
+    highlight: true,
+  },
 ];
 
 export default function Navbar() {
@@ -32,9 +38,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [location.pathname]);
 
-  const goToPage = (href: string) => {
+  const handleNavClick = (link: {
+    href: string;
+    external?: boolean;
+  }) => {
     setMobileOpen(false);
-    navigate(href);
+
+    if (link.external) {
+      window.open(link.href, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    navigate(link.href);
   };
 
   return (
@@ -65,34 +80,50 @@ export default function Navbar() {
             </div>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => goToPage(link.href)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeSection === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {link.label}
-                </button>
-              ))}
+            <div className="hidden md:flex items-center gap-2">
+              {navLinks.map((link) => {
+                const isActive = !link.external && activeSection === link.href;
+
+                if (link.highlight) {
+                  return (
+                    <button
+                      key={link.href}
+                      onClick={() => handleNavClick(link)}
+                      className="px-5 py-2.5 rounded-xl text-sm font-semibold bg-accent text-accent-foreground shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+
+                return (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      isActive
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Logo */}
             <div className="flex items-center justify-end">
               <img
-  src="/logoo.png"
-  alt="Basira Logo"
-  draggable={false}
-  className={`h-10 sm:h-11 md:h-14 w-auto object-contain transition-all duration-300 ${
-    scrolled
-      ? "drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
-      : "drop-shadow-[0_4px_10px_rgba(0,0,0,0.28)]"
-  }`}
-/>  
+                src="/logoo.png"
+                alt="Basira Logo"
+                draggable={false}
+                className={`h-10 sm:h-11 md:h-14 w-auto object-contain transition-all duration-300 ${
+                  scrolled
+                    ? "drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
+                    : "drop-shadow-[0_4px_10px_rgba(0,0,0,0.28)]"
+                }`}
+              />
             </div>
           </div>
         </div>
@@ -109,19 +140,25 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="fixed top-24 right-4 left-4 z-50 md:hidden rounded-3xl bg-white/95 backdrop-blur-xl shadow-2xl border border-slate-200 p-4 animate-scale-in">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => goToPage(link.href)}
-              className={`block w-full text-right px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                activeSection === link.href
-                  ? "bg-primary/10 text-primary"
-                  : "text-foreground/75 hover:text-primary hover:bg-primary/5"
-              }`}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = !link.external && activeSection === link.href;
+
+            return (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link)}
+                className={`block w-full text-right px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  link.highlight
+                    ? "bg-accent text-accent-foreground hover:opacity-90 mb-2"
+                    : isActive
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground/75 hover:text-primary hover:bg-primary/5"
+                }`}
+              >
+                {link.label}
+              </button>
+            );
+          })}
         </div>
       )}
     </>

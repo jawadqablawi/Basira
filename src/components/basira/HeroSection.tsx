@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Heart, Users, Sparkles } from "lucide-react";
+import { Heart, Users, Sparkles, Vote } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -17,6 +17,7 @@ export default function HeroSection() {
 
       <div className="container relative z-10 px-5 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,19 +29,21 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
+          {/* Title */}
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-primary-foreground leading-tight mb-6"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            نصنع <span className="text-accent">بصيرة</span> لأطفال
+            نصنع <span className="text-accent">بصيرة</span> ونصنع
             <br />
-            يستحقون المستقبل
+            أثرًا يستحقه الأطفال
           </motion.h1>
 
+          {/* Description */}
           <motion.p
-            className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed sm:leading-loose"
+            className="text-lg md:text-xl text-primary-foreground/80 mb-4 max-w-2xl mx-auto leading-relaxed sm:leading-loose"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -49,12 +52,22 @@ export default function HeroSection() {
             خلال الدعم النفسي والتعليمي والأنشطة الملهمة.
           </motion.p>
 
+          {/* Voting message */}
+          <motion.p
+            className="text-sm md:text-base text-primary-foreground/90 mb-8 max-w-2xl mx-auto font-medium"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          >
+            صوتك يدعم فريق بصيرة وجامعة فلسطين التقنية خضوري في مسابقة PSSF
+          </motion.p>
+
           {/* دعم المؤسسة */}
           <motion.div
             className="flex justify-center mb-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
           >
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-4 sm:px-5 py-3 sm:py-4 backdrop-blur-md shadow-lg w-full max-w-[320px] sm:max-w-fit">
               <span className="text-primary-foreground text-sm md:text-base font-medium">
@@ -71,41 +84,59 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
+          {/* Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
+            {/* زر التصويت 🔥 */}
             <Button
-  variant="hero"
-  size="lg"
-  className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
-  onClick={() =>
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSeKIoBvhLFCMO7Kr4bDpx-jWTOinkogAcII9izUTwQ6whQFVQ/viewform?usp=dialog",
-      "_blank"
-    )
-  }
->
-  <Heart className="h-5 w-5" />
-  انضم إلينا
-</Button>
+              size="lg"
+              className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto bg-accent text-accent-foreground hover:scale-105 hover:shadow-xl transition-all duration-300 font-bold"
+              onClick={() =>
+                window.open(
+                  "https://www.thepssf.com/pif-vote",
+                  "_blank"
+                )
+              }
+            >
+              <Vote className="h-5 w-5" />
+              صوّت لفريق بصيرة
+            </Button>
 
-<Button
-  variant="hero-outline"
-  size="lg"
-  className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
-  onClick={() =>
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLScV-PSwmKQrw2di1KtBFLjHXewJz7aF5WPX4nOQiXjFFU0m7w/viewform?usp=sharing&ouid=108016718349544175707",
-      "_blank"
-    )
-  }
->
-  <Users className="h-5 w-5" />
-  تطوّع معنا
-</Button>
+            {/* انضم */}
+            <Button
+              variant="hero"
+              size="lg"
+              className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSeKIoBvhLFCMO7Kr4bDpx-jWTOinkogAcII9izUTwQ6whQFVQ/viewform?usp=dialog",
+                  "_blank"
+                )
+              }
+            >
+              <Heart className="h-5 w-5" />
+              انضم إلينا
+            </Button>
+
+            {/* تطوع */}
+            <Button
+              variant="hero-outline"
+              size="lg"
+              className="text-base px-8 py-6 rounded-xl gap-2 w-full sm:w-auto"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLScV-PSwmKQrw2di1KtBFLjHXewJz7aF5WPX4nOQiXjFFU0m7w/viewform?usp=sharing",
+                  "_blank"
+                )
+              }
+            >
+              <Users className="h-5 w-5" />
+              تطوّع معنا
+            </Button>
           </motion.div>
         </div>
       </div>
