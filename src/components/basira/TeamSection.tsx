@@ -1,7 +1,27 @@
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 const teamMembers = [
-     {
+  {
+    name: "Jawad Qablawi",
+    role: "Computer Engineering Student",
+    image: "/team/jawad.jpg",
+    bio: "يساهم في تنظيم أعمال المبادرة ومتابعة الأنشطة والتنسيق بين أعضاء الفريق.",
+    socials: {
+      instagram: "https://www.instagram.com/jawad.qablawi?igsh=MXhldGZtaWx1cXo5aA==",
+    },
+  },
+  
+  {
+    name: "Areen Hamdan",
+    role: "Media Technology Student",
+    image: "/team/areen.jpeg",
+   bio: "تعمل على توثيق أنشطة المبادرة وإدارة المحتوى الإعلامي، من خلال التصوير والتصميم وصناعة محتوى هادف يعكس رسالة المبادرة ويصل إلى المجتمع بشكل مؤثر.",
+    socials: {
+      instagram: "https://www.instagram.com/areen__48?igsh=MWZ1cWNkYmhtdGhzOQ==",
+    },
+  },
+  
+  {
     name: "Halla  shumali",
     role: "Bachelor of English Language",
     image: "/team/halla.jpeg",
@@ -11,24 +31,8 @@ const teamMembers = [
    
     },
   },
-   {
-    name: "Jawad Qablawi",
-    role: "Computer Engineering Student",
-    image: "/team/jawad.jpg",
-    bio: "يساهم في تنظيم أعمال المبادرة ومتابعة الأنشطة والتنسيق بين أعضاء الفريق.",
-    socials: {
-      instagram: "https://www.instagram.com/jawad.qablawi?igsh=MXhldGZtaWx1cXo5aA==",
-    },
-  },
-   {
-    name: "Areen Hamdan",
-    role: "Media Technology Student",
-    image: "/team/areen.jpeg",
-   bio: "تعمل على توثيق أنشطة المبادرة وإدارة المحتوى الإعلامي، من خلال التصوير والتصميم وصناعة محتوى هادف يعكس رسالة المبادرة ويصل إلى المجتمع بشكل مؤثر.",
-    socials: {
-      instagram: "https://www.instagram.com/areen__48?igsh=MWZ1cWNkYmhtdGhzOQ==",
-    },
-  },
+   
+   
  
 
 
